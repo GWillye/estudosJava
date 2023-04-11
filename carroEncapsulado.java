@@ -17,7 +17,7 @@ void frear(): reseta a velocidade do carro para zero.
 String devolveInformacoes() - devolve uma String contendo informações sobre o veículo no seguinte formato:
 "Carro de modelo _ com _ passageiros", onde os valores _ s’ são substituídos pelas informações requisitadas. */
 
-public class Carro 
+public class carroEncapsulado 
 {
     //Atributos
     private String modelo;
@@ -27,7 +27,7 @@ public class Carro
     private boolean estaLigado;
 
     //Construtor
-    public Carro (String mod, int nP, int nPas)
+    public carroEncapsulado (String mod, int nP, int nPas)
     {
         this.modelo = mod;
         this.nPortas = nP;
@@ -58,7 +58,7 @@ public class Carro
         return this.velocidade;
     }
 
-    public void setVelocidade(double newVelocidade)
+    private void setVelocidade(double newVelocidade)
     {
         this.velocidade = newVelocidade;
     }
@@ -71,6 +71,16 @@ public class Carro
     public void setPassageiros(int newPassageiros)
     {
         this.nPassageiros = newPassageiros;
+    }
+
+    public String getModelo()
+    {
+        return this.modelo;
+    }
+
+    public int getPortas()
+    {
+        return this.nPortas;
     }
 
     public String devolveInformacoes()
